@@ -1,0 +1,101 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg:        #F4F6FB;
+  --surface:   #FFFFFF;
+  --surface2:  #EEF1F8;
+  --border:    #E2E6F0;
+  --text:      #1A1D2E;
+  --text2:     #6B7280;
+  --accent:    #4C6FFF;
+  --accent2:   #7C3AED;
+  --success:   #10B981;
+  --danger:    #EF4444;
+  --warning:   #F59E0B;
+  --radius:    14px;
+  --radius-sm: 8px;
+  --shadow:    0 2px 16px rgba(0,0,0,.07);
+  --font:      'Plus Jakarta Sans', sans-serif;
+  --font-serif:'Lora', serif;
+}
+
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100dvh;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; text-decoration: none; }
+
+button {
+  font-family: var(--font);
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+/* Utility classes */
+.card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 16px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 18px;
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+  font-weight: 600;
+  transition: opacity .15s, transform .1s;
+}
+.btn:active { transform: scale(.97); }
+
+.btn-primary {
+  background: var(--accent);
+  color: #fff;
+}
+.btn-primary:hover { opacity: .88; }
+
+.btn-ghost {
+  background: var(--surface2);
+  color: var(--text);
+}
+.btn-ghost:hover { opacity: .8; }
+
+.btn-danger {
+  background: #FEE2E2;
+  color: var(--danger);
+}
+
+.tag {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+}
+
+.spinner {
+  width: 36px; height: 36px;
+  border: 3px solid var(--surface2);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: spin .7s linear infinite;
+  margin: 40px auto;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.empty {
+  text-align: center;
+  padding: 48px 24px;
+  color: var(--text2);
+  font-size: 15px;
+}
